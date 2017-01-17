@@ -455,6 +455,9 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
         if (CGRectEqualToRect(bounds, CGRectZero)) {
             bounds = [[UIScreen mainScreen] bounds];
         }
+        if (CGRectEqualToRect(bounds, CGRectZero)) {
+           bounds = [self.viewController.view bounds];
+        }
         bounds = [self invertFrameIfNeeded:bounds];
 
         self.viewController.view.frame = bounds;
